@@ -1,13 +1,77 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <!-- 移动端适配 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 浏览器标签标题，后面可以改成 现金押运管理系统 -->
+  <title>现金押运管理系统</title>
+  <!-- favicon图标，暂时没有可以先放着 -->
+<!-- 在这里新增全局样式 -->
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border‑box;
+  }
+  html,body,#app {
+    width:100%;
+    height:100%;
+  }
+  html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+#app {
+  width: 100%;
+  height: 100%;
+}
+  
+</style>
+
+  <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+  <!-- 唯一挂载点！Vue所有东西都渲染到这个div里面 -->
+  <div id="app"></div>
+  <!-- 入口脚本，固定写法，不要改 -->
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
+
+<!--##  这个文件里面**只允许写这些**
+
+1. `<!DOCTYPE html>` 文档声明
+2. `<html>`、`<head>`、`<body>` 原生标签
+3. meta 标签：编码、viewport
+4. title 网页标题
+5. favicon 图标 link
+6. `<div id="app">` 挂载容器
+7. 引入 `/src/main.js` 的 script-->
+<!--##
+-1. **它是整个项目唯一的入口 HTML 文件**
+浏览器最先加载这个文件，Vue 所有页面、组件最终都挂载在这里。
+
+```
+<div id="app"></div>
+```
+
+👉 这个 `#app` 就是挂载点，`main.js` 会把 Vue 应用渲染到这个 div 里面。
+
+2. 引入 `main.js`
+
+```
+<script type="module" src="/src/main.js"></script>
+```
+
+Vite 从这里开始，顺着 `main.js` 去加载 Vue、路由、组件、样式。
+
+3. 配置页面基础信息
+
+- `charset="UTF-8"`：中文不乱码
+- viewport：适配手机
+- title：浏览器标签标题
+- favicon：标签小图标
+--->

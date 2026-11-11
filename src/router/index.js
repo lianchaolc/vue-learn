@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // 项目自带的是 HomeView.vue，不是 Home.vue
-import Home from '../views/HomeView.vue'
+import HomeView from '../views/HomeView.vue'
 // 下面这几个页面，哪个文件还没建好，就把对应的 import 和路由注释掉
 import Box from '../views/Box.vue'
 import Transport from '../views/Transport.vue'
@@ -8,11 +8,11 @@ import Transport from '../views/Transport.vue'
 import SystemUser from '../views/SystemUser.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
+  //{
+  //  path: '/',
+  //  name: 'HomeView',
+  //  component: HomeView
+ // },
   {
     path: '/box',
     name: 'box',
@@ -28,7 +28,13 @@ const routes = [
     path: '/systemUser',
     name: 'systemUser',
     component: SystemUser
+  },
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('@/views/Home.vue')
   }
+  
 ]
 
 const router = createRouter({
